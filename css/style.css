@@ -216,8 +216,8 @@ img {
         }					
 		#portfolio article,
 		#resume article {
-			float:left;
-			width:33%;
+			float: left;
+			width: 33%;
 		}
 	}	
 
