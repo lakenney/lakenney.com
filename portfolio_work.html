@@ -14,15 +14,97 @@
 		
 		<!-- Add media query support for IE8 and under. Must place media queries in external stylesheet -->
 		<script src="js/respond.min.js"></script>
-		
+        
+		<!-- Using picturefill to load conditional images and matchmedia to provide support for IE8 and below + older browsers -->
+		<script src="js/picturefill.js"></script>
+		<script src="js/matchmedia.js"></script>
+        		
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-			
+        
+        
+        
 	<style type="text/css" media="all">
 	
+	/********************************************
+	Fluid Media
+	********************************************/
+
+	figure {
+	    position: relative;
+	}
+
+	figure img,
+	figure object,
+	figure embed,
+	figure video {
+	    display: block;
+	    max-width: 100%; 
+	}
+
+	img {
+	    border: 0;
+	    -ms-interpolation-mode: bicubic;
+	}
+
+	/* 
+	interpolation-mode
+	http://css-tricks.com/ie-fix-bicubic-scaling-for-images/
+	 */
 	
-	</style>   
+	
+/* Creates hover effect on Portfolio images */
+	#portfolio figure:hover,
+	.box:hover {
+	    -moz-box-shadow: 0 0 .65em .325em rgba( 0, 0, 0, .1 );
+	    -webkit-box-shadow: 0 0 .65em .325em rgba( 0, 0, 0, .1 );
+	    box-shadow: 0 0 .65em .325em rgba( 0, 0, 0, .1 );
+	}
+
+	/* Image Offset for Indication of Linked Content */
+
+	#portfolio figure:hover {
+	    bottom: .26em;
+	}
+	
+	@media screen and (min-width: 45em) {
+	#container-header {
+		background: #352a38 url("img/bg-photo-l.jpg") no-repeat top center;
+	    padding:10% 0;
+		-webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    background-size: cover;
+	}
+	}	
+	
+	@media screen and (max-width: 45em) {
+		#container-header {
+		    background: #352a38 url("img/bg-photo-s.jpg") no-repeat top center;
+			-webkit-background-size: cover;
+		    -moz-background-size: cover;
+		    background-size: cover;
+			padding: 10% 0;
+		}
+	}	
+			
+	/* Headshot */
+
+	#lucille {
+	    width: 25%;
+	    height: 0;
+		padding-top:0;
+		padding-right:0;
+	    padding-bottom: 25%;
+		padding-left:0;
+		background-color:transparent;
+	    }
+    
+	#lucille img {
+	    width: 100%;
+	    }			
+			
+	</style>  
 	</head>
 
 <body lang="en">
@@ -45,12 +127,24 @@
 			</div><!--end container-nav-->
 			
 			<div id="container-header">
-			<header id="masthead" class="wrapper">
-                <h1>Hi, I'm Lucille</h1>
-    
-                <h2>A Boston-based hybrid UI designer/developer  with a passion for user experience and the web</h2>
-            </header>
+                <header id="masthead" class="wrapper">
+                    <figure id="lucille"> 
+                        <div data-picture data-alt=""lucille Kenney">
+                            <div data-src="img/headshot-s.png"></div>
+                            <div data-src="img/headshot-m.png" data-media="(min-width: 45em)"></div>
+                            <div data-src="img/headshot-l.png" data-media="(min-width: 60em)"></div>
+                            <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+                            <noscript>
+                                <img src="img/headshot-s.png" alt="lucille Chopra">
+                            </noscript>
+                        </div>
+                    </figure>            
+                                                
+                      <h1>Hi, I'm Lucille</h1>
+                        <h2>A Boston-based hybrid UI designer/developer  with a passion for user experience and the web</h2>
+                </header>
 			</div><!--end container-header-->
+            
 		<div id="container-content">
 			<article id="content">
 	
@@ -62,28 +156,33 @@
 						<p>Some of the things I've been working on lately</p>
 					</header>
                     
-				<article class="group wrapper">
-				  <h4>First In Office Panels Homepage</h4>
-	
-						<figure>
-							<img src="img/First-In-Office-Panels.png" alt="First in Office Furniture website">
-				  		</figure>
-				</article>
-
-                		<article class="group wrapper">
-				  	<h4>Talkfest Web App</h4>
-						<figure>
-							<img src="img/talkfest.png" alt=" ">
-						</figure>
-                </article>
-
-		<article class="group wrapper">
-		  			<h4>BBH Employee Investor Services</h4>
-                        <figure>
-                            <img src="img/investor-services.png" 
-                            alt=" ">
-                        </figure>
-				</article>
+                    <article class="group wrapper">
+                      <h4>First In Office Panels Homepage</h4>
+                            <a href="/img/vitamin-t">
+                                <figure>
+                                    <img src="img/First-In-Office-Panels.png" alt="First in Office Furniture website">
+                                </figure>
+                            </a>
+                    </article>
+    
+                    <article class="group wrapper">
+                        <h4>Talkfest Web App</h4>
+                            <a href="img/talkfest.png">
+                                <figure>
+                                    <img src="img/talkfest.png" alt=" ">
+                                </figure>
+                            </a>
+                    </article>
+    
+                    <article class="group wrapper">
+                        <h4>BBH Employee Investor Services</h4>
+                            <a href="img/investor-services.png">
+                                <figure>
+                                    <img src="img/investor-services.png" 
+                                    alt=" ">
+                                </figure>
+                            </a>
+                    </article>
                 
              	<!--<article>
 				  <h4>BBH Employee Story Page</h4>
