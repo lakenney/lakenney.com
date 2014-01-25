@@ -27,79 +27,196 @@
         
 	<style type="text/css" media="all">
 	
-	/********************************************
-	Fluid Media
-	********************************************/
+/*---------------------------			
+	Navigation
+	Style nav section for single column smallscreen view 
+---------------------------*/
+	/*   
+	- Create faux section height using padding.
+	*/
 
-	figure {
-	    position: relative;
+	#nav {
+		padding: .65em 0;
 	}
-
-	figure img,
-	figure object,
-	figure embed,
-	figure video {
-	    display: block;
-	    max-width: 100%; 
+	
+	/*
+	- Float heading and capitalize content.
+	*/
+	
+	#nav h3 {
+		float: left;
+		text-transform: capitalize; 
 	}
-
-	img {
-	    border: 0;
-	    -ms-interpolation-mode: bicubic;
-	}
-
+	
 	/* 
-	interpolation-mode
-	http://css-tricks.com/ie-fix-bicubic-scaling-for-images/
-	 */
+	- Remove <ul> list-style and default padding.
+	- Add a border-top to separate each <li>.
+	- Add a border-bottom to <ul> to wrap-up border styling. 
+	- Add margin to separate, push off <ul> from heading/navicon and below #masthead section.
+	*/
 	
-	
-/* Creates hover effect on Portfolio images */
-	#portfolio figure:hover,
-	.box:hover {
-	    -moz-box-shadow: 0 0 .65em .325em rgba( 0, 0, 0, .1 );
-	    -webkit-box-shadow: 0 0 .65em .325em rgba( 0, 0, 0, .1 );
-	    box-shadow: 0 0 .65em .325em rgba( 0, 0, 0, .1 );
+	#nav ul {
+		list-style: none;
+		padding: 0;
+		border-bottom: 1px solid #eee;
+		margin: .65em 0 .39em;
 	}
 
-	/* Image Offset for Indication of Linked Content */
-
-	#portfolio figure:hover {
-	    bottom: .26em;
-	}
-	
-	@media screen and (min-width: 45em) {
-	#container-header {
-		background: #d1d6dc url("img/bg-photo-l.jpg") no-repeat top center;
-	    padding:10% 0;
-		-webkit-background-size: cover;
-	    -moz-background-size: cover;
-	    background-size: cover;
-	}
+	#nav li {
+	   border-top: 1px solid #eee;
 	}	
 	
-	@media screen and (max-width: 45em) {
-		#container-header {
-		    background: #d1d6dc url("img/bg-photo-s.jpg") no-repeat top center;
-			-webkit-background-size: cover;
-		    -moz-background-size: cover;
-		    background-size: cover;
-			padding: 10% 0;
-		}
-	}	
-			
-	/* Headshot */
+	#nav a {
+	   display: block;
+	   font-size: 1.063em;
+	   color: #333;
+	   text-decoration: none;
+	   padding: .975em 1.3em; 
+	}
 
-	#lucille {
-	    width: 25%;
-	    height: 0;
-	    padding-bottom: 25%;
-	    }
+	/*
+	13. Style :hover for non-touch enabled browsers/devices.
+	*/
+	
+	#nav a:hover {
+	   background: #f8f8f8;
+	}
+	
+	
+	/* 
+	Hide <nav> off-screen
+	http://37signals.com/svn/posts/3126-another-9999px ]
+	*/
+	
+	#nav nav {
+		height: 0;
+		overflow: hidden;
+	}
+	
+
+
+/* ******************************************
+    Advanced Checkbox Hack for ios and android some browser versions
+	Further reading:
+http://timpietrusky.com/advanced-checkbox-hack
+****************************************** */
+
+body { 
+    -webkit-animation: bugfix infinite 1s; 
+}
+
+@-webkit-keyframes bugfix {
+    from {padding: 0;} 
+    to {padding: 0;} 
+}					
+
+/* 
+1. Hide <nav> off-screen / -9999px/-999em technique works best.
+*/
+#nav input[type=checkbox] {
+    position: absolute;
+    top: -999em;
+    left: -999em;
+}
+
+/* 
+2. Restore <label> element (Removed in min-width: 45em media query).
+3. Present <label> as navicon using a background-image.
+4. Hide <label> content - "Menu" - off-screen using negative text-indent.
+5. Style <label> to behave like a link using cursor and user-select properties.
+*/
+
+#nav label { 
+    display: block;
+    background: url("img/icon-menu.png") no-repeat right center;
+    text-indent: -999em;
+    cursor: pointer;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+}
+/* 
+6. Show <nav> on-screen / drop-down menu 
+*/
+
+#nav input[type=checkbox]:checked ~ nav {
+    height: auto;
+    overflow: hidden;  
+}
+
+
+/* ******************************************
+    Media Queries
+	Create horizontal menu for screens with a min-width of 45em.
+****************************************** */
+
+/* @media screen and (min-width: 720px) */
+@media screen and (min-width: 45em) {
+
+    /*
+    1. Remove padding from one-column layout style.
+    */
     
-	#lucille img {
-	    width: 100%;
-	    }			
+    #nav {
+        padding: 0;
+    }
+	
+    /*
+    2. Adjust headline baseline using margin-top to align with horizontal menu and margin-right to create a gap/division from the two types of content.
+    */
+
+    #nav h3 {
+         margin: .39em 1.3em 0 0;
+    }
+    
+    /*
+    3. Remove <label> element.
+    */
+
+    #nav label {
+        display: none;
+    }
+    /* 
+    4. Show <nav> on-screen.
+    */
+
+    #nav nav {
+        height: auto;
+        overflow: visible;
+    }
+    
+    /* 
+    5. Remove border and margin from one-column layout style.
+    */
+    
+    #nav ul {
+        border: 0;
+        margin: 0;
+        }
+        
+    /* 
+    6. Display <li> as inline for horizontal menu layout.
+    7. Remove border.
+    */
+
+    #nav li {
+        display: inline;
+        border: 0;
+    }	
 			
+	   /* 
+    8. Display <a> from block to inline-block to remain inline for horizontal menu layout.
+    */
+    
+    #nav a {
+        display: inline-block;
+        }
+		
+		}
+
+
+
 	</style>  
 	</head>
 
@@ -109,18 +226,20 @@
 			<section id="nav" class="wrapper">
 			
 				<h3>Lucille Kenney</h3>
-					<!-- Turn off for now
-					<nav>
-						<ul>
-							<li>Portfolio</li>
-							<li>Resume</li>
-							<li>LinkedIn Profile</li>
-							<li>Contact</li>
-						</ul>
-					 </nav>
-					end turn off nav -->
-				</section>
-			</div><!--end container-nav-->
+                <!-- Checkbox Hack markup -->
+                <input type="checkbox" id="toggle" />
+                <label for="toggle" onclick>Menu</label>
+                <!-- /Checkbox Hack markup -->
+                <nav>
+                    <ul>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#resume">Resume</a></li>
+                        <li><a href="./">LinkedIn Profile</a></li> <!-- No destination yet -->
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                    </section>
+                </div><!--end container-nav-->
 			
 			<div id="container-header">
                 <header id="masthead" class="wrapper">
@@ -153,7 +272,7 @@
 					</header>
                     
                     <article class="group wrapper">
-                      <h4>First In Office Panels Homepage</h4>
+                      <h4>First In Office Panels</h4>
                             <a href="/img/vitamin-t">
                                 <figure>
                                     <img src="img/First-In-Office-Panels.png" alt="First in Office Furniture website">
@@ -171,7 +290,7 @@
                     </article>
     
                     <article class="group wrapper">
-                        <h4>BBH Employee Investor Services</h4>
+                        <h4>BBH Investor Services</h4>
                             <a href="img/investor-services.png">
                                 <figure>
                                     <img src="img/investor-services.png" 
@@ -245,7 +364,7 @@
 		<div id="container-footer">
 			<footer id="colophon" class="wrapper">
             
-                <form>
+                <form id="contact">
                     <fieldset class="wrapper">
                         <legend>Contact</legend>
                             <ul class="group">
