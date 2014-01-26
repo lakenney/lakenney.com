@@ -1,9 +1,13 @@
 <!DOCTYPE HTML>
+<!--[if lt IE 9]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>Lucille Kenney's portfolio</title>
-		
+        
+        <link href="favicon.ico" rel="icon" type="image/x-icon" />
+        
 		<!-- Viewport meta tag to prevent iPhone from scaling our page -->
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		
@@ -23,201 +27,22 @@
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
         
+        <!-- ---------------------------
+         Checkbox Hack Support for IE8
+        --------------------------- -->
         
+        <!--[if lt IE 9]>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+        <![endif]-->
         
-	<style type="text/css" media="all">
-	
-/*---------------------------			
-	Navigation
-	Style nav section for single column smallscreen view 
----------------------------*/
-	/*   
-	- Create faux section height using padding.
-	*/
-
-	#nav {
-		padding: .65em 0;
-	}
-	
-	/*
-	- Float heading and capitalize content.
-	*/
-	
-	#nav h3 {
-		float: left;
-		text-transform: capitalize; 
-	}
-	
-	/* 
-	- Remove <ul> list-style and default padding.
-	- Add a border-top to separate each <li>.
-	- Add a border-bottom to <ul> to wrap-up border styling. 
-	- Add margin to separate, push off <ul> from heading/navicon and below #masthead section.
-	*/
-	
-	#nav ul {
-		list-style: none;
-		padding: 0;
-		border-bottom: 1px solid #eee;
-		margin: .65em 0 .39em;
-	}
-
-	#nav li {
-	   border-top: 1px solid #eee;
-	}	
-	
-	#nav a {
-	   display: block;
-	   font-size: 1.063em;
-	   color: #333;
-	   text-decoration: none;
-	   padding: .975em 1.3em; 
-	}
-
-	/*
-	13. Style :hover for non-touch enabled browsers/devices.
-	*/
-	
-	#nav a:hover {
-	   background: #f8f8f8;
-	}
-	
-	
-	/* 
-	Hide <nav> off-screen
-	http://37signals.com/svn/posts/3126-another-9999px ]
-	*/
-	
-	#nav nav {
-		height: 0;
-		overflow: hidden;
-	}
-	
-
-
-/* ******************************************
-    Advanced Checkbox Hack for ios and android some browser versions
-	Further reading:
-http://timpietrusky.com/advanced-checkbox-hack
-****************************************** */
-
-body { 
-    -webkit-animation: bugfix infinite 1s; 
-}
-
-@-webkit-keyframes bugfix {
-    from {padding: 0;} 
-    to {padding: 0;} 
-}					
-
-/* 
-1. Hide <nav> off-screen / -9999px/-999em technique works best.
-*/
-#nav input[type=checkbox] {
-    position: absolute;
-    top: -999em;
-    left: -999em;
-}
-
-/* 
-2. Restore <label> element (Removed in min-width: 45em media query).
-3. Present <label> as navicon using a background-image.
-4. Hide <label> content - "Menu" - off-screen using negative text-indent.
-5. Style <label> to behave like a link using cursor and user-select properties.
-*/
-
-#nav label { 
-    display: block;
-    background: url("img/icon-menu.png") no-repeat right center;
-    text-indent: -999em;
-    cursor: pointer;
-    -webkit-user-select: none;  /* Chrome all / Safari all */
-    -moz-user-select: none;     /* Firefox all */
-    -ms-user-select: none;      /* IE 10+ */
-    user-select: none;
-}
-/* 
-6. Show <nav> on-screen / drop-down menu 
-*/
-
-#nav input[type=checkbox]:checked ~ nav {
-    height: auto;
-    overflow: hidden;  
-}
-
-
-/* ******************************************
-    Media Queries
-	Create horizontal menu for screens with a min-width of 45em.
-****************************************** */
-
-/* @media screen and (min-width: 720px) */
-@media screen and (min-width: 45em) {
-
-    /*
-    1. Remove padding from one-column layout style.
-    */
-    
-    #nav {
-        padding: 0;
-    }
-	
-    /*
-    2. Adjust headline baseline using margin-top to align with horizontal menu and margin-right to create a gap/division from the two types of content.
-    */
-
-    #nav h3 {
-         margin: .39em 1.3em 0 0;
-    }
-    
-    /*
-    3. Remove <label> element.
-    */
-
-    #nav label {
-        display: none;
-    }
-    /* 
-    4. Show <nav> on-screen.
-    */
-
-    #nav nav {
-        height: auto;
-        overflow: visible;
-    }
-    
-    /* 
-    5. Remove border and margin from one-column layout style.
-    */
-    
-    #nav ul {
-        border: 0;
-        margin: 0;
-        }
+        <!--[if IE 8]>
+        <script src="./js/checkbox.js"></script>
+        <![endif]--> 
         
-    /* 
-    6. Display <li> as inline for horizontal menu layout.
-    7. Remove border.
-    */
-
-    #nav li {
-        display: inline;
-        border: 0;
-    }	
-			
-	   /* 
-    8. Display <a> from block to inline-block to remain inline for horizontal menu layout.
-    */
-    
-    #nav a {
-        display: inline-block;
-        }
-		
-		}
-
-
-
-	</style>  
+        <!--[if IE 6]>
+        <script src="./js/selectivizr-min.js"></script>
+        <![endif]-->
+                       
 	</head>
 
 <body lang="en">
@@ -227,9 +52,9 @@ body {
 			
 				<h3>Lucille Kenney</h3>
                 <!-- Checkbox Hack markup -->
-                <input type="checkbox" id="toggle" />
-                <label for="toggle" onclick>Menu</label>
-                <!-- /Checkbox Hack markup -->
+		        <input type="checkbox" id="toggle" />
+		        <label for="toggle" onclick>Menu</label>
+		        <!-- /Checkbox Hack markup -->
                 <nav>
                     <ul>
                         <li><a href="#portfolio">Portfolio</a></li>
@@ -244,7 +69,7 @@ body {
 			<div id="container-header">
                 <header id="masthead" class="wrapper">
                     <figure id="lucille"> 
-                        <div data-picture data-alt=""lucille Kenney">
+                        <div data-picture data-alt="lucille Kenney">
                             <div data-src="img/headshot-s.png"></div>
                             <div data-src="img/headshot-m.png" data-media="(min-width: 45em)"></div>
                             <div data-src="img/headshot-l.png" data-media="(min-width: 60em)"></div>

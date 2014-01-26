@@ -1,0 +1,40 @@
+#=============================================================================#
+#  MAIN SETTINGS AND OPTIONS
+#  Lucille Kenney
+#=============================================================================#
+
+#Custom Error Document
+#ErrorDocument 404 /~lkenney/GrAd_14/final_project/status404.php
+
+#Redirect Directive
+#temporary
+#Redirect 302 /~lkenney/GrAd_14/final_project/myresume   http://lucillekenney.com/#ResumeLucilleKenney.pdf
+#Redirect 302 /~localhost/final_project/myresume   http://localhost/Sites/portfolio/ResumeLucilleKenney.pdf
+
+#Cashing 
+ExpiresActive On
+#
+ExpiresByType text/css   A86400    
+## HTML expires in 1 day
+# 
+ExpiresByType application/x-javascript   A86400    
+## HTML expires in 1 day
+# 
+ExpiresByType image/gif   A86400 
+## GIF  expires in 1 day
+# 
+ExpiresByType image/jpeg  A86400
+## JPEG expires in 1 day
+# 
+ExpiresByType image/jpg  A86400
+## JPG expires in 1 day
+# 
+ExpiresByType image/png   A86400 
+## PNG  expires in 1 day
+# 
+
+#Compress Content
+AddOutputFilterByType DEFLATE text/xhtml
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/x-javascript
