@@ -54,23 +54,6 @@ body {
         min-height: 100%;
 }
 
-
-article,
-aside,
-details,
-figcaption,
-,
-footer,
-header,
-hgroup,
-nav,
-section,
-audio,
-canvas,
-video {
-        display: block;
-}
-
 sub,
 sup {
         font-size: 75%;
@@ -142,7 +125,9 @@ table {
         Web Fonts
 ****************************************** */
 
-@font-face {
+
+
+/*@font-face {
     font-family: 'Roboto Condensed Light';
     src: url('../fonts/robotocondensed-light-webfont.eot');
     src: url('../fonts/robotocondensed-light-webfont.eot?#iefix') format('embedded-opentype'),
@@ -151,15 +136,18 @@ table {
          url('../fonts/robotocondensed-light-webfont.svg#RobotoCondensedLight') format('svg');
     font-weight: normal;
     font-style: normal;
-}
+}*/
+
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,600,700,400);*/
+
 
 /* ******************************************
         Custom Styles
 ****************************************** */
 
-#nav,#masthead,#content,#colophon {
+/*#nav,#masthead,#content,#colophon {
         margin: 0 18px;
-}
+}*/
 
 #masthead {
         color:#666;
@@ -225,7 +213,7 @@ html {
 }
 
 body {
-        font-family: "Roboto Condensed Light", "Helvetica Neue", Helvetica, sans-serif;
+		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
 }
 
 p, #resume li {
@@ -769,40 +757,40 @@ body {
 @media print and (max-width: 8.5in){
         
         #masthead {
-                color:black;
+        	color:black;
         }
         #container-header {
-         color: #000;
-                background:#fff;
-                height: auto;
+       		color: #000;
+        	background:#fff;
+        	height: auto;
         }
         h2, h3 {
-           page-break-after: avoid;
+			page-break-after: avoid;
         }                
         img {
-                width:2in;
+  			width:2in;
         }
-        #portfolio        {
-                float:left;
-                width:45%;
+        #portfolio {
+        	float:left;
+        	width:45%;
         }
-        #resume        {
-                float:right;
-                width:45%;
+        #resume {
+        	float:right;
+        	width:45%;
         }
-        #container-footer        {
-                clear:both;
-        }
-   nav, aside {
-          display: none;
-   }
         #container-footer {
-                padding: 32px 0;
-                background:#fff;
-                color:#000;        
+        	clear:both;
+        }
+   		nav, aside {
+          	display: none;
+  		}
+        #container-footer {
+			padding: 32px 0;
+			background:#fff;
+			color:#000;        
         }
         article {
-           page-break-before: always;
+           	page-break-before: always;
         }                
 }
 
