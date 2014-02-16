@@ -853,5 +853,5 @@ Note: When using this polyfill, use an absolute path instead of a relative path 
 .ie .email,
 .ie input,
 .ie textarea {
-    *behavior: url("http://lakenney.com/portfolio.html/js/boxsizing.htc");
+    *behavior: url("http://lakenney.com/js/boxsizing.htc");
 }
