@@ -12,11 +12,9 @@
 
 		<!-- Viewport meta tag to prevent iPhone from scaling our page -->
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
-		
-		<link rel="stylesheet" href="css/style.css"/>
         <!-- Reset update January 28, 2014 -->
 		<link rel="stylesheet" href="css/normalize.css">
-
+		<link rel="stylesheet" href="css/style.css"/>
 
 	
 		<!--[if lt IE 9]>
@@ -56,7 +54,7 @@
                         <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#resume">Resume</a></li>
                         <li><a href="http://lucillekenney.com/">Archived Site</a></li> <!-- No destination yet -->
-                        <li><a href="#contactform">Contact</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
                     </section>
@@ -65,7 +63,7 @@
 			<div id="container-header">
                 <header id="masthead" class="wrapper">
                     <figure id="lucille"> 
-                        <div data-picture data-alt="lucille Kenney">
+                        <div data-picture data-alt="Lucille Kenney">
                             <div data-src="img/headshot-s.png"></div>
                             <div data-src="img/headshot-m.png" data-media="(min-width: 45em)"></div>
                             <div data-src="img/headshot-l.png" data-media="(min-width: 60em)"></div>
@@ -77,7 +75,7 @@
                     </figure>            
                                                 
                       <h1>Hi, I'm Lucille</h1>
-                        <h2>A Boston-based hybrid UI designer/developer  with a passion for user experience and the web with a penchant for staying abreast of new trends and technology.</h2>
+                        <h2>A Boston-based hybrid UI designer/developer with a passion for user experience on the web and  a penchant for staying abreast of new trends and technology.</h2>
                 </header>
 			</div><!--end container-header-->
             
@@ -175,7 +173,12 @@
                  	</article>
                      
 				  <footer class="wrapper">
-					  <p>For a full work history, have a look at my <a href="http://lucillekenney.com/ResumeLucilleKenney.pdf" title="Resume for Lucille Kenney UX Designer" target="_new">resume</a>.
+					  <p>For a full work history, have a look at my <a href="http://lucillekenney.com/ResumeLucilleKenney.pdf" title="Resume for Lucille Kenney UX Designer" target="_new">resume</a>. 
+
+                    <!--  An archived digital portfolio of past work can be viewed at 
+                      <a href="http://lucillekenney.com" title="Digital Archive for Lucille Kenney Web Designer, Developer" target="_new">LucilleKenney.com--></p>
+                    
+                      
 				  </footer>
 				
 			  </section>
@@ -185,27 +188,25 @@
 		<div id="container-footer">
 			<footer id="colophon" class="wrapper">
             
-                <form method="post" action="/cgi-bin/email.cgi" id="contactform">
-                    <!-- This hidden form field contains the email address of the recipient, but we don't just blindly trust it. checks email.conf. -->
-                    <input type="hidden" name="recipient" value="lakenney@rcn.com">            
-                        <fieldset class="wrapper">
-                            <legend>Contact</legend>
-                                <ul class="group">
-                                    <li class="name">
-                                        <label for="name">Your Name</label>
-                                        <input type="text" id="name" name="name" />
-                                    </li>
-                                    <li class="email">
-                                        <label for="email">Your Email</label>
-                                        <input type="email" id="email" name="email" />
-                                    </li>
-                                    <li class="message">
-                                        <label for="message">Say Hello</label>
-                                        <textarea id="message" name="message"></textarea>
-                                    </li>
-                                </ul>
-                            <input class="send" type="submit" name="submit" value="Send" />
-                        </fieldset>
+                <form id="contact">
+                    <fieldset class="wrapper">
+                        <legend>Contact</legend>
+                            <ul class="group">
+                                <li class="name">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" id="name" name="name" />
+                                </li>
+                                <li class="email">
+                                    <label for="email">Your Email</label>
+                                    <input type="email" id="email" name="email" />
+                                </li>
+                                <li class="message">
+                                    <label for="message">Say Hello</label>
+                                    <textarea id="message" name="message"></textarea>
+                                </li>
+                            </ul>
+                        <input class="send" type="submit" name="submit" value="Send" />
+                    </fieldset>
                 </form>
 
 				<p>©2013 all rights reserved. Fill out a form here to get in touch.</p>
@@ -214,10 +215,10 @@
         
 	<!-- Normalize hide address bar for iOS and Android -->
 		<script src="js/hideaddressbar.js"></script>
-		
+	
 		<!-- Add media query support for IE8 and under. Must place media queries in external stylesheet -->
 		<script src="js/respond.min.js"></script>
-        
+        	
 		<!-- Using picturefill to load conditional images and matchmedia to provide support for IE8 and below + older browsers -->
 		<script src="js/picturefill.js"></script>
 		<script src="js/matchmedia.js"></script>
