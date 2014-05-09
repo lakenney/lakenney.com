@@ -222,6 +222,27 @@
 		<!-- Using picturefill to load conditional images and matchmedia to provide support for IE8 and below + older browsers -->
 		<script src="js/picturefill.js"></script>
 		<script src="js/matchmedia.js"></script>
+
+
+
+
+            <script src="js/jquery.validate.js" type="text/javascript"></script>
+    
+    <!-- Validator for contact form -->
+    <script>
+        $(document).ready(function () {
+        
+            $('#contactform').validate({ // initialize the plugin
+                rules: {
+                    phone_number: {
+                        required: true,
+                        phoneUS: true
+                    }
+                },
+            });
+        
+        });
+    </script>
                 
 	</body>
 </html>
