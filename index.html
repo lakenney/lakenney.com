@@ -188,9 +188,10 @@
 I augmented the phone field http://jqueryvalidation.org/phoneUS-method/ -->
  
 
-                    <form method="post" action="/cgi-bin/email.cgi" id="contact">
-                        <!-- This hidden form field contains the email address of the recipient, but we don't -->
-                        <!-- just blindly trust it. checks email.conf. -->
+                    <!--<form method="post" action="/cgi-bin/email.cgi" id="contact">-->
+                    <form method="post" action="http://web.mit.edu/lakenney.com/cgi-bin/cgiemail" id="contact">                        
+                        <!-- This hidden form field contains the email address of the recipient, but we don't 
+                        just blindly trust it. checks email.conf. -->
                         <input type="hidden" name="recipient" value="lucille@lakenney.com">
                         <fieldset class="wrapper">
                         <legend>Contact</legend>
