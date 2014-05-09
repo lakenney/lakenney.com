@@ -121,6 +121,16 @@ table {
         border-spacing: 0;
 }
 
+a {
+   color: #49AFCC;
+   text-decoration: none;
+}
+/*-13. Style :hover for non-touch enabled browsers/devices.*/
+a:hover {
+   background: #f8f8f8;
+   color: #333;
+}
+
 /* ******************************************
         Web Fonts
 ****************************************** */
@@ -384,23 +394,23 @@ form li {
 }
         
 legend {
-        font-size: 1.382em; 
-        line-height: 1.223;
+    font-size: 1.382em; 
+    line-height: 1.223;
 }
                     
 label {
     display: block;
  	font-size: 1em;
 /*	font-size: 0.7em;
-*/  	line-height: 1.56;
+*/  line-height: 1.56;
     padding: 0 0 .325em;
 }
                 
 legend, label {      
-        font-weight: 300;
-        text-transform: uppercase;
-        color: #fff;
-		text-decoration:
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #fff;
+	text-decoration:
 }
         
 input,
@@ -408,9 +418,9 @@ textarea {
     display: block;
     width: 100%;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 1em;
-        line-height: 1.3;
-        font-weight: 500;
+    font-size: 1em;
+    line-height: 1.3;
+    font-weight: 500;
     padding: .65em;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -427,6 +437,14 @@ textarea {
     overflow: auto; /* 1 */
     vertical-align: top; /* 2 */
 }
+/* Error handling */
+
+form.contact label.error, label.error {
+    /* remove the next line when you have trouble in IE6 with labels in list */
+    color: #b10213;
+    font-weight: bold;
+}
+div.error { display: none; }
 
 .send {
     display: inline-block;
@@ -739,7 +757,7 @@ body {
 	}
 	.send {
 			width: 25%;
-			margin-left: 50%;
+			/*margin-left: 50%;*/
 	}
 		
 	/* Form Fixes, IE7 and below */

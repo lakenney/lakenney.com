@@ -4,12 +4,12 @@
 #=============================================================================#
 
 #Custom Error Document
-#ErrorDocument 404 /~lkenney/GrAd_14/final_project/status404.php
+ErrorDocument 404 /status404.html
 
 #Redirect Directive
 #temporary
-#Redirect 302 /~lkenney/GrAd_14/final_project/myresume   http://lucillekenney.com/#ResumeLucilleKenney.pdf
-#Redirect 302 /~localhost/final_project/myresume   http://localhost/Sites/portfolio/ResumeLucilleKenney.pdf
+#Redirect 302 /~lkenney/GrAd_14/final_project/myresume   http://lucillekenney.#com/#ResumeLucilleKenney.pdf
+#Redirect 302 /~localhost/final_project/myresume   http://#localhost/Sites/portfolio/ResumeLucilleKenney.pdf
 
 #Cashing 
 ExpiresActive On
