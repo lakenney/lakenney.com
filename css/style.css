@@ -321,6 +321,9 @@ Fluid Columns, Fixed Gutters */
         padding: .975em; /* 3/4 of 1.3 */
 		max-width: 25em;
 }
+#portfolio figure,.screens.box {
+		max-width: 100%;
+}
 
 section footer {
         clear: both;
@@ -445,6 +448,12 @@ form.contact label.error, label.error {
     font-weight: bold;
 }
 div.error { display: none; }
+
+/* added for error message on form */
+#error {
+    font-size: 1.5em;
+    color: #b10213;
+}
 
 .send {
     display: inline-block;
@@ -637,6 +646,11 @@ body {
                 float: left;
                 width: 33.333%;
         }
+        #resume article.screens {
+                float: left;
+                width: 100%;
+        }
+		
         #masthead {
                 max-width:40em;
         }
@@ -799,6 +813,10 @@ body {
         	float:right;
         	width:45%;
         }
+	/*	#resume-screen {
+        	float:right;
+        	width:100%;
+        }*/
         #container-footer {
         	clear:both;
         }

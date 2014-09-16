@@ -8,9 +8,9 @@
         
         <link href="favicon.ico" rel="icon" type="image/x-icon" />
 
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600,700,400' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Open+Sans:300,600,700,400' rel='stylesheet' type='text/css'>
 
-		<!-- Viewport meta tag to prevent iPhone from scaling our page -->
+		<!-- Viewport meta tag to prevent iPhone from scaling our page use initial-scale=1.0-->
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
 		
         <!-- Reset update January 28, 2014 -->
@@ -113,8 +113,7 @@
                         <h4>BBH Investor Services</h4>
                             <a href="https://www.bbh.com/wps/portal/home" title="Senior Web Designer, Developer for Brown Brothers Harriman" target="_new">
                                 <figure>
-                                    <img src="img/investor-services.png" 
-                                    alt=" ">
+                                    <img src="img/investor-services.png" alt=" ">
                                 </figure>
                             </a>
                     </article>
@@ -137,16 +136,16 @@
 				  </header>
                   
 					<article class="wrapper">	
-					<div class="box">
-						<h4>Currently</h4>
-
-						<h5>Freelace UI, UX Designer/Developer</h5>
-
-						<h6>Harvard Library HUID, Cambridge, MA</h6>
-                        
-                        <h6>First In Office Panels</h6>
-                        <p>UX Design for Harvard Library. Mobile first responsive site for First In Office Panels.</p>
-					</div>
+                        <div class="box">
+                            <h4>Currently</h4>
+    
+                            <h5>Freelace UI, UX Designer/Developer</h5>
+    
+                            <h6><a href="huit.html" title="Screen shots of UX/UI work" target="_new">Harvard Library HUID, Cambridge, MA</a></h6>
+                                                        
+                            <h6>First In Office Panels</h6>
+                            <p>UX Design for Harvard Library. Mobile first responsive site for First In Office Panels.</p>
+                        </div>
 					</article>
                     <article class="wrapper">
 						<div class="box">
@@ -156,7 +155,7 @@
             
                           <h6>Brown Brothers Harriman, Boston MA Feb 2011 - Oct 2012</h6>
             
-                          <p>Lead designer and  html, css developer for BBH's client facing web site. </p>
+                          <p>Lead designer and  html, css developer for BBH's client facing web site. Designed and developed <a href="bbh-intranet.html" title="Large Scale Employee Intranet Site" target="_new">large scale employee intranet portal site</a>. </p>
                         </div><!-- close class box-->
 					</article>
                     
@@ -165,8 +164,9 @@
                             <h4>Skills</h4>
                               <ul>
                                   <li>Adobe Creative Suite CS 5.5, MAMP, GitHub, Browser Developer Tools, Sublime 2</li>
-                                  <li>HTML5 &amp; CSS3</li>
+                                  <li>HTML5, CSS3, JavaScript, jQuery, Bootstrap</li>
                                   <li>Responsive Web Design</li>
+                                  <li>Exposure to PHP, mySQL, Ajax and JSON</li>
                               </ul>
                         </div><!--close class box--> 
                  	</article>
@@ -187,31 +187,30 @@
 <!-- Raymond Selda validation form http://www.raymondselda.com/php-contact-form-with-jquery-validation/
 I augmented the phone field http://jqueryvalidation.org/phoneUS-method/ -->
  
-
-                    <!--<form method="post" action="/cgi-bin/email.cgi" id="contact">-->
-                    <form method="post" action="http://web.mit.edu/lakenney.com/cgi-bin/cgiemail" id="contact">                        
-                        <!-- This hidden form field contains the email address of the recipient, but we don't 
-                        just blindly trust it. checks email.conf. -->
-                        <input type="hidden" name="recipient" value="lucille@lakenney.com">
-                        <fieldset class="wrapper">
-                        <legend>Contact</legend>
-                            <ul class="group">
-                                <li class="name">
-                                    <label for="name">Your Name</label>
-                                    <input type="text" id="name" name="name" />
-                                </li>
-                                <li class="email">
-                                    <label for="email">Your Email</label>
-                                    <input type="email" id="email" name="email" />
-                                </li>
-                                <li class="message">
-                                    <label for="message">Say Hello</label>
-                                    <textarea id="message" name="message"></textarea>
-                                </li>
-                            </ul>
-                        <input class="send" type="submit" name="submit" value="Send" />
-                    </fieldset>
-                </form>
+<form method="POST" action="/cgi-bin/email.cgi" id="contact">
+<!--<form method="post" action="http://web.mit.edu/lakenney.com/cgi-bin/cgiemail" id="contact">-->                        
+    <!-- This hidden form field contains the email address of the recipient, but we don't just blindly trust it. checks email.conf. -->
+    <input type="hidden" name="recipient" value="portfolio@lucillekenney.com">
+        <fieldset class="wrapper">
+            <legend>Contact</legend>
+                <ul class="group">
+                    <li class="name">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name"/>
+                    </li>
+                    <li class="email">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required/>
+                        <span id="error"></span>
+                    </li>
+                    <li class="message">
+                        <label for="message">Say Hello</label>
+                        <textarea id="message" name="message"></textarea>
+                    </li>
+                </ul>
+            <input class="send" type="submit" name="submit" value="Send" />
+        </fieldset>
+</form>
 
 				<p>&copy;2014 all rights reserved.</p>
 			</footer>

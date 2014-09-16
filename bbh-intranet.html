@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 9]><html class="ie"><![endif]-->
+<!--[if !IE]><!--><html><!--<![endif]-->
+<html>
+<head>
+		<meta charset="UTF-8">
+		<title>Lucille Kenney's portfolio</title>
+        
+        <link href="favicon.ico" rel="icon" type="image/x-icon" />
+
+		<link href='//fonts.googleapis.com/css?family=Open+Sans:300,600,700,400' rel='stylesheet' type='text/css'>
+
+		<!-- Viewport meta tag to prevent iPhone from scaling our page -->
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0"/>
+		
+        <!-- Reset update January 28, 2014 -->
+		<link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+
+	
+	<!--[if lt IE 9]>
+			<script src="js/html5.js"></script>
+		<![endif]-->
+        
+    <!-- ---------------------------
+         Checkbox Hack Support for IE8
+        --------------------------- -->
+        
+    <!--[if lt IE 9]>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+        <![endif]-->
+        
+    <!--[if IE 8]>
+        <script src="./js/checkbox.js"></script>
+        <![endif]--> 
+        
+    <!--[if IE 6]>
+        <script src="./js/selectivizr-min.js"></script>
+        <![endif]-->
+                  
+
+	</head>
+
+    <body lang="en">
+
+		<div id="container-nav">
+			<section id="nav" class="wrapper">
+			
+				<h3>Lucille Kenney</h3>
+                <!-- Checkbox Hack markup -->
+		        <input type="checkbox" id="toggle" />
+		        <label for="toggle" onclick>Menu</label>
+		        <!-- /Checkbox Hack markup -->
+                <nav>
+                    <ul>
+                        <li><a href="index.html#portfolio">Portfolio</a></li>
+                        <li><a href="index.html#resume">Resume</a></li>
+                        <li><a href="http://lucillekenney.com/">Archived Site</a></li> <!-- No destination yet -->
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                    </section>
+                </div><!--end container-nav-->
+            
+		<div id="container-content">
+			<article id="content">
+	
+<!--				<section id='portfolio' class="group">
+	
+					<header class="wrapper">
+						<h3>My Portfolio Continued</h3>
+		
+						<p>Some of the things I've been working on lately</p>
+					</header>
+                
+             	<article>
+				  <h4>BBH Employee Story Page</h4>
+						<figure>
+							<img src="img/employee-story.png" alt=" ">
+						</figure>
+                </article>
+                      
+				</section>-->
+	
+				<section id='resume' class='group'>
+                  
+					<article class="wrapper screens">
+                      <div class="box screens">
+                        <h4>UI, UX Designer/Developer</h4>
+    
+                        <h5>Large Scale Employee Intranet Portal Site, Boston, MA</h5>
+    
+                        <h6>Screen shots of BBH large scale employee intranet site</h6>
+                            
+                            <p>Flushed out the hirarchy. The UX design involved a few  lines of business. Initially the design approach was a waterfall type environment where the layout was flushed out in Photoshop and coded with css, html, some javascript and flash. The design approach became more agile as other lines of business were added. This screen shot shows the primary nav bar for all lines of business. Each line of business had their own banner using different words and images but with this same branding.</p>
+    
+                            <figure>
+                                <img src="img/bbh-nav.png" alt=" ">
+                            </figure>
+                            
+                        <p>Each line of business had it's own secondary, side bar navigation </p>
+                            <figure>
+                                <img src="img/bbh-ops.png" alt=" ">
+                            </figure>
+                      </div>
+					</article>
+                    
+                    
+				  <footer class="wrapper">
+					<p>
+                        For a full work history, have a look at my <a href="http://lucillekenney.com/ResumeLucilleKenney.pdf" title="Resume for Lucille Kenney UX Designer Developer" target="_new">resume in pdf format</a>.
+                    </p>
+				  </footer>
+				
+			  </section>
+			</article>
+		</div><!--close container-content-->
+		
+		<div id="container-footer">
+			<footer id="colophon" class="wrapper">
+            
+
+				<p>&copy;2014 all rights reserved.</p>
+			</footer>
+		</div><!--end container-footer-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+	<!-- Normalize hide address bar for iOS and Android -->
+	<script src="js/hideaddressbar.js"></script>
+	
+	<!-- Add media query support for IE8 and under. Must place media queries in external stylesheet -->
+	<script src="js/respond.min.js"></script>
+    
+	<!-- Using picturefill to load conditional images and matchmedia to provide support for IE8 and below + older browsers -->
+	<script src="js/picturefill.js"></script>
+	<script src="js/matchmedia.js"></script>
+
+    <!-- Validator for contact form -->
+    <script src="js/jquery.validate.min.js" type="text/javascript"></script>
+
+    <script>        
+            $('#contact').validate({ // initialize the plugin
+                rules: { // My tweak in case I want to add phone number
+                    phone_number: {
+                        required: true,
+                        phoneUS: true
+                    }
+                },
+            });
+        
+    </script>
+
+	</body>
+</html>
